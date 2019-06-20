@@ -17,16 +17,6 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) =>{
   res.sendFile('./public/index.html')
-connection.query('INSERT INTO itemdetails (title, expiryDate, highestBid) VALUES ("Cat", ("2020-07-04 11:11:11"), 4000);', (err, post)=>{
-  if(err){
-    res.status(500).send('');
-    return
-  } else {
-    res.status(200);
-    res.json(post)
-    return
-  }
-})
 });
 
 app.get('/api/items', (req, res) => {
