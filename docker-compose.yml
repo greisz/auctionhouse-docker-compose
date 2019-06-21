@@ -11,7 +11,12 @@ services:
   maria:
     container_name: maria
     image: mariadb
+    volumes:
+      - container-volume:/var/lib/mysql
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
     ports:
       - '3306:3306'
     environment:
       MYSQL_ROOT_PASSWORD: example
+volumes:
+  container-volume:
