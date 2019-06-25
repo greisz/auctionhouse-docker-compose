@@ -7,11 +7,6 @@ pipeline {
                 sh 'docker-compose build'
             }
         }
-        stage('Test'){
-            steps{
-                echo Hello
-            }
-        }
         stage('Deploy'){
             steps{
                 sh 'docker-compose push'
