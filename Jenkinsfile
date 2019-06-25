@@ -6,9 +6,11 @@ pipeline {
                 checkout scm
                 sh 'docker-compose build'
             }
-        }stage('Test'){
+        }
+        stage('Test'){
             echo Hello
-        }stage('Deploy'){
+        }
+        stage('Deploy'){
             sh 'docker-compose push'
         }
     }
