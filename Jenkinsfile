@@ -8,10 +8,14 @@ pipeline {
             }
         }
         stage('Test'){
-            echo Hello
+            steps{
+                echo Hello
+            }
         }
         stage('Deploy'){
-            sh 'docker-compose push'
+            steps{
+                sh 'docker-compose push'
+            }
         }
     }
 }
