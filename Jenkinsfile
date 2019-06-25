@@ -1,13 +1,10 @@
 pipeline {
-    agent: any
+    agent any  
     stages {
-        stage('Build') {
+        stage('Example Build') {
             steps {
+                checkout scm
                 sh 'docker-compose up'
-            }
-        }
-        stage('Test') {
-            steps {
             }
         }
     }
